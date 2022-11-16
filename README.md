@@ -14,6 +14,13 @@ In this example, the ESP is configured in STA (station) mode to connect to WiFi.
 <p align=center>
 <img src="https://user-images.githubusercontent.com/10864822/202283679-9c7f3c8f-62fb-4261-b78e-8b6539cf53bd.GIF" width ="400">
 </p>
+<h3> GENERAL IDEA </h3>
+
+<p align=center>
+<img src="https://user-images.githubusercontent.com/10864822/202307093-ca25cb98-a2e3-4b85-926b-1ae4436e6286.jpg" width ="400">
+</p>
+
+
 <h3>THE CODE </h3>
 The example consists of two programs. One for the web client and one for the web server.
 <h5> WEB CLIENT </h5>
