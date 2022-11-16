@@ -34,7 +34,9 @@ The example consists of two programs. One for the web client and one for the web
 This program is automatically loaded by the browser from the ESP32 when it makes the first connection request. So, the "clientWeb.HTML" file must be stored in the ESP32's memory.
 
 To know how the file system works, you can follow the tutorial from random nerd tutorials: [Install ESP32 Filesystem Uploader in Arduino IDE](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/)
-"""
+
+
+```
 
 let param = "lightState";
 
@@ -46,4 +48,4 @@ let response = await fetch("/", {
     body: param
 });
 
-"""
+```
