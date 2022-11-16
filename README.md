@@ -22,7 +22,7 @@ Basically, the ESP32 connects to a WiFi network with the well-known function WiF
 Immediately, this page " clientWeb.html" will start sending messages to the ESP32 at short time intervals requesting information about the button state. The ESP will respond to this request with a string: "on" or "off".
 </p>
 <p align=center>
-<img src="https://user-images.githubusercontent.com/10864822/202307093-ca25cb98-a2e3-4b85-926b-1ae4436e6286.jpg" width ="400">
+<img src="https://user-images.githubusercontent.com/10864822/202307093-ca25cb98-a2e3-4b85-926b-1ae4436e6286.jpg" width ="650">
 </p>
 
 
@@ -34,3 +34,16 @@ The example consists of two programs. One for the web client and one for the web
 This program is automatically loaded by the browser from the ESP32 when it makes the first connection request. So, the "clientWeb.HTML" file must be stored in the ESP32's memory.
 
 To know how the file system works, you can follow the tutorial from random nerd tutorials: [Install ESP32 Filesystem Uploader in Arduino IDE](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/)
+"""
+
+let param = "lightState";
+
+let response = await fetch("/", {
+    method: 'POST',
+    headers: {
+        'Content-type': 'text/plain;charset=utf-8'
+    },
+    body: param
+});
+
+"""
