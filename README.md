@@ -29,15 +29,17 @@ Immediately, this page " clientWeb.html" will start sending messages to the ESP3
 <h3>THE CODE </h3>
 The example consists of two programs. One for the web client and one for the web server.
 <h5> WEB CLIENT </h5>
+
+<p align="justify">
   The client-Web program will work in the internet browser of a computer or smartphone, so it is written in JavaScript nested in a "clientWeb.HTML" file.
 
 This program is automatically loaded by the browser from the ESP32 when it makes the first connection request. So, the "clientWeb.HTML" file must be stored in the ESP32's memory.
 
 To know how the file system works, you can follow the tutorial from random nerd tutorials: [Install ESP32 Filesystem Uploader in Arduino IDE](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/)
 
-
+Once the "ClientWeb.html" file is working, it starts sending requests to know the status of the button. This is done with the JavaScript function: fetch().
+</p>
 ```
-
 let param = "lightState";
 
 let response = await fetch("/", {
@@ -47,5 +49,9 @@ let response = await fetch("/", {
     },
     body: param
 });
-
 ```
+
+<p align="justify">
+The JavaScript fetch() function sends a request to the url indicated in its first parameter (in this case "/") described in the options described by the second parameter, (in this case, the POST method, data type "text /plain", and the data "lightState")
+  </p>
+  
