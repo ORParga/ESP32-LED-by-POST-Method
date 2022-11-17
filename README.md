@@ -83,4 +83,20 @@ The first function, which uses the response to the request of the HTTP_GET type,
         });
   ```
   
-  
+<p align="justify">
+  The second function, which uses the response to the POST type request, is in charge of sending information about the button's state through another function request->send()
+</p>
+
+```
+
+if (digitalRead(4))
+{
+    request->send(200, "text/html", "on");//send a string "on" to the client if the button on GPIO4 is on
+}
+else
+{
+    request->send(200, "text/html", "off");//send a string "off" to the client if the button on GPIO4 is off
+}
+ ```
+ 
+ 
