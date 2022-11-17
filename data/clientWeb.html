@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>ESP32 Config</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+        <canvas id="myCanvas" width="300" height="150" style=" margin :auto; ">
+            LED by POST Method
+        </canvas>
+
+        <script>
+            var text = "OFF";
+            var fillColor = 'gray';
+
+            var canvas = document.getElementById('myCanvas');
+            var context = canvas.getContext('2d');
+            var centerX = canvas.width / 2;
+            var centerY = canvas.height / 2;
+            var radius = 70;
+            context.font = "italic  bold 50px arial";
+            lineHeight = context.measureText('M').width;
+
+
+            function SetCircle(on_off) {
+                if (on_off == 0) {
+                    fillColor = 'gray';
+                    text = 'OFF';
+                }
+                else {
+                    fillColor = 'red';
+                    text = 'ON';
+                }
+                context.beginPath();
+                context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+                context.fillStyle = fillColor;
+                    context.fill();
+                    context.lineWidth = 5;
+                    context.strokeStyle = '#330000';
+                    context.stroke();
+
+                    context.fillStyle = 'white';
+                    const metrics = context.measureText(text);
+                    context.fillText(text, centerX - (metrics.width / 2), centerY + (25 / 2));
+                    context.strokeText(text, centerX - (metrics.width / 2), centerY + (25 / 2));
+
+            }
+
+            async function requestLedState() {
+
+                let param = "lightState";
+
+                let response = await fetch("/", {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'text/plain;charset=utf-8'
+                    },
+                    body: param
+                });
+                let result = await response.text();
+                let equal = result.localeCompare("on");
+                if (equal == 0) {
+                    SetCircle(1);
+
+                }
+                else {
+                    let equal = result.localeCompare("off");
+                    if (equal == 0) {
+                        SetCircle(0);
+                    }
+                    else {
+                        button.innerHTML = "???";
+                    }
+                }
+            }
+
+            SetCircle(0);
+            setInterval(requestLedState, 50);
+
+</script>
+</body>
+</html>
