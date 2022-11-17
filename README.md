@@ -26,6 +26,16 @@ Immediately, this page " clientWeb.html" will start sending messages to the ESP3
 </p>
 
 
+<h3>THE CIRCUIT </h3>
+
+The electrical circuit is very simple. Simply a push button connected to pin 4 and a led connected to pin 16.
+
+<p align=center>
+<img src="https://user-images.githubusercontent.com/10864822/202324013-2d686127-fe46-4d44-bdfe-0026b372e639.jpg" width ="400">
+</p>
+
+
+
 <h3>THE CODE </h3>
 The example consists of two programs. One for the web client and one for the web server.
 <h4><u> WEB CLIENT </u></h4>
@@ -74,7 +84,7 @@ In this example, the web server is the program loaded on the ESP32. For simplici
   
   
 <p align="justify">
-The first function, which uses the response to the request of the HTTP_GET type, is responsible for sending the web page "clientWeb.html" to the browser that requests it, through the delegate function: request->send().
+The first function, which uses the response to the request of the HTTP_GET type, is responsible for sending the web page "clientWeb.html" to the browser that requests it, through the delegate function in the ESP32: request->send().
   </p>
   
   ```
@@ -100,7 +110,7 @@ server.on("/", HTTP_POST, ....{
   ...
 }
  ```
- This information is received by the Web client as a result of its request through the value returned by response.text();
+ This information is received by the Web client as a result of its request through the value returned by the JavaScript function "response.text()";
  
 ```
 
