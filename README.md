@@ -28,7 +28,7 @@ Immediately, this page " clientWeb.html" will start sending messages to the ESP3
 
 <h3>THE CODE </h3>
 The example consists of two programs. One for the web client and one for the web server.
-<h4> WEB CLIENT </h4>
+<h4><u> WEB CLIENT </u></h4>
 
 <p align="justify">
   The client-Web program will work in the internet browser of a computer or smartphone, so it is written in JavaScript nested in a "clientWeb.HTML" file.
@@ -59,7 +59,7 @@ The JavaScript fetch() function sends a request to the url indicated in its firs
 
   </p>
 
-<h4> WEB SERVER </h4>
+<h4><u> WEB SERVER </u></h4>
 
 <p align="justify">
 In this example, the web server is the program loaded on the ESP32. For simplicity, it only responds to a minimum number of client requests. The most important to understand its operation are:
@@ -71,3 +71,16 @@ In this example, the web server is the program loaded on the ESP32. For simplici
     server.on("/", HTTP_POST,...);
 
   ```
+  
+  
+<p align="justify">
+The first function, which uses the response to the request of the HTTP_GET type, is responsible for sending the web page "clientWeb.html" to the browser that requests it, through the delegate function: request->send().
+  </p>
+  
+  ```
+    server.on("/", HTTP_GET, [](AsyncWebServerRequest* request) {
+        request->send(SPIFFS, "/clientWeb.html", "text/html");
+        });
+  ```
+  
+  
