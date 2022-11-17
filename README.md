@@ -131,6 +131,13 @@ if (equal == 0) {
 }
 ```
 
+
+
+<p align=center>
+<img src="https://user-images.githubusercontent.com/10864822/202328420-18833b07-e070-43ef-a52a-3a60f2cf1e80.png" width ="500">
+</p>
+
+
 <h3> LINKS </h3>
 
 If you want to know more about the fetch() function and POST communications, I recommend the following link:
