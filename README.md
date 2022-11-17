@@ -132,9 +132,17 @@ if (equal == 0) {
 ```
 
 <h3> LINKS </h3>
+
 If you want to know more about the fetch() function and POST communications, I recommend the following link:
+
 [https://javascript.info/fetch](https://javascript.info/fetch)
+
+
 I also recommend the GitHub page about ESPASyncWebServer:
+
 [https://github.com/me-no-dev/ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
+
+
 Finally, I recommend trying a good version of webServer for ESP32 based on GET methods
+
 [https://randomnerdtutorials.com/esp32-web-server-arduino-ide/](https://randomnerdtutorials.com/esp32-web-server-arduino-ide/)
