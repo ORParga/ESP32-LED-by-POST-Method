@@ -31,11 +31,8 @@ Immediately, this page " clientWeb.html" will start sending messages to the ESP3
 The electrical circuit is very simple. Simply a push button connected to pin 4 and a led connected to pin 16.
 
 <p align=center>
-<img src="[https://user-images.githubusercontent.com/10864822/202324013-2d686127-fe46-4d44-bdfe-0026b372e639.jpg](https://github.com/ORParga/ESP32-LED-by-POST-Method/assets/10864822/25f4a3bc-1513-4390-af57-caf8cc955421)" width ="400">
-
+<img src="https://github.com/ORParga/ESP32-LED-by-POST-Method/assets/10864822/43b6e48a-3877-4867-b526-4733e2ebdaf7" width ="400">
 </p>
-
-
 
 <h3>THE CODE </h3>
 The example consists of two programs. One for the web client and one for the web server.
